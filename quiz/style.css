@@ -1,0 +1,133 @@
+*, *::before, *::after {
+box-sizing: border-box;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+font-size: 1.5rem;
+}
+
+:root{
+    --hue-neutral: 200;
+    --hue-wrong: 0 ;
+    --hue-correct: 145;
+}
+body {
+    --hue: var(--hue-neutral);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+   background-image: url('/img/javascript-powered-multichannel.gif');
+}
+
+body.correct {
+    --hue: var(--hue-correct);
+}
+body.wrong {
+    --hue: var(--hue-wrong);
+}
+
+.container {
+    width:max-content;
+    max-width: 80%;
+    max-height: 100%;
+   
+    background-image:url("/img/blog-slido-virtual-quiz-setup-header.jpg");
+   
+    border-radius: 33px;
+    padding: 150px;
+    box-shadow: 0 0 20px 5px;
+}
+.score {
+    font-size: 3rem;
+}
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(1,auto);
+    gap: 10px;
+    margin: 40px 0 ;
+}
+.btn {
+    --hue: var(--hue-neutral);
+    border: 4px solid hsl(var(--hue), 100%, 33%);
+    background-color: hsl(var(--hue), 100%, 60%);
+    border-radius: 5px;
+    padding: 8px 16px;
+    color: rgb(0, 0, 0);
+    outline: none;
+}
+.btn:hover {
+    border-color:rgb(117, 26, 202) ;
+}
+.btn.correct {
+    --hue: var(--hue-correct);
+}
+.btn.wrong {
+    --hue: var(--hue-wrong);
+}
+
+.start-btn, .next-btn {
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+.q-num {
+    float:right;
+    font-size: 1.6rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+.header {
+    font-size: 2rem;
+    font-family:'Segoe UI';
+}
+.countdown {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 2.5rem;
+    float: right;
+    background-color: white;
+    border-radius: 10%;
+    
+}
+#notifications {
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    margin: 1em;
+}
+
+.notification {
+    font-size: 1.5em;
+    color: #ffffff;
+    display: none;
+    text-align: center;
+}
+
+.notification>span {
+    display: inline-block;
+    padding:  0.5em 2em 0.5em 2em;
+    border-radius: 10px;
+}
+
+#loadingBox>span {
+    background: #7CB3E9;
+}
+#infoBox>span {
+    background: #393;
+}
+#errorBox>span {
+    background: rgb(216, 197, 23);
+}
